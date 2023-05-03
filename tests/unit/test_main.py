@@ -1,3 +1,5 @@
+import pytest
+
 from main import somar, subtrair, multiplicar, dividir
 
 
@@ -69,6 +71,87 @@ def teste_dividir_negativo():
     # 3 - Valida
     assert resultado_esperado == resultado_obtido
     print(f'Resultado esperado: {resultado_esperado}, Resultado obtido: {resultado_obtido}')
+
+
+lista_de_valores_soma = [
+    (8, 7, 15),
+    (20, 30, 50),
+    (25, 0, 25),
+    (-5, 12, 7)
+]
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores_soma)
+def teste_somar_lista(numero_a, numero_b, resultado_esperado):
+    # 1 - Configura
+    # utilizamos a lista como massa de teste
+    # 2 - Executa
+    resultado_obtido = somar(numero_a, numero_b)
+
+    # 3 - Valida
+    assert resultado_esperado == resultado_obtido
+    print(f'Resultado esperado: {resultado_esperado}, Resultado obtido: {resultado_obtido}')
+
+
+lista_de_valores_subtrair = [
+    (8, 7, 1),
+    (40, 30, 10),
+    (25, 0, 25),
+    (-5, 12, -17)
+]
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores_subtrair)
+def teste_subtrair_lista(numero_a, numero_b, resultado_esperado):
+    # 1 - Configura
+    # utilizamos a lista como massa de teste
+    # 2 - Executa
+    resultado_obtido = subtrair(numero_a, numero_b)
+
+    # 3 - Valida
+    assert resultado_esperado == resultado_obtido
+    print(f'Resultado esperado: {resultado_esperado}, Resultado obtido: {resultado_obtido}')
+
+
+lista_de_valores_multiplicar = [
+    (2, 7, 14),
+    (20, 30, 600),
+    (25, 0, 0),
+    (-2, 12, -24)
+]
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores_multiplicar)
+def teste_multiplicar_lista(numero_a, numero_b, resultado_esperado):
+    # 1 - Configura
+    # utilizamos a lista como massa de teste
+    # 2 - Executa
+    resultado_obtido = multiplicar(numero_a, numero_b)
+
+    # 3 - Valida
+    assert resultado_esperado == resultado_obtido
+    print(f'Resultado esperado: {resultado_esperado}, Resultado obtido: {resultado_obtido}')
+
+
+lista_de_valores_dividir = [
+    (14, 7, 2),
+    (40, 10, 4),
+    (25, 0, 0),
+    (-10, 5, -2)
+]
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores_dividir)
+def teste_dividir_lista(numero_a, numero_b, resultado_esperado):
+    # 1 - Configura
+    # utilizamos a lista como massa de teste
+    # 2 - Executa
+    resultado_obtido = dividir(numero_a, numero_b)
+
+    # 3 - Valida
+    assert resultado_esperado == resultado_obtido
+    print(f'Resultado esperado: {resultado_esperado}, Resultado obtido: {resultado_obtido}')
+
 
 # TDD = Test Driven Development
 #       Desenvolvimento Direcionado a Teste
