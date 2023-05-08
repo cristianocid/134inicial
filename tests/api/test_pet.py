@@ -27,7 +27,7 @@ def teste_incluir_pet():
     resultado_obtido = requests.post(
         url=url,
         headers=headers,
-        data=open('C:\\Users\\cris_\\PycharmProjects\\134inicial\\tests\\vendors\\json\\pet1.json')
+        data=open('/vendors\\json\\pet1.json')
     )
 
     # Valida
@@ -86,7 +86,7 @@ def teste_alterar_pet():
     resultado_obtido = requests.put(
         url=url,
         headers=headers,
-        data=open('C:\\Users\\cris_\\PycharmProjects\\134inicial\\tests\\vendors\\json\\pet2.json')
+        data=open('/vendors\\json\\pet2.json')
     )
 
     # Valida

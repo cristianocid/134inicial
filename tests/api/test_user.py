@@ -26,7 +26,7 @@ def teste_incluir_usuario():
     resultado_obtido = requests.post(
         url=url,
         headers=headers,
-        data=open('C:\\Users\\cris_\\PycharmProjects\\134inicial\\tests\\vendors\\json\\usuario1.json')
+        data=open('/vendors\\json\\usuario1.json')
     )
 
     # Valida
